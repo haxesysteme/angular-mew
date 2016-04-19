@@ -1,8 +1,12 @@
 {
   "name": "angular-mew",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An angular wrapper for the Hawk HTTP authentication scheme",
   "homepage": "https://github.com/Sonaryr/angular-mew",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sonaryr/angular-mew.git"
+  },
   "author": "Maarten Schroeven <maarten@sonaryr.be>",
   "license": "MIT",
   "scripts": {
