@@ -1,7 +1,7 @@
 {
   "name": "angular-mew",
   "version": "0.1.0",
-  "description": "A wrapper for Hawk HTTP authentication",
+  "description": "An angular wrapper for the Hawk HTTP authentication scheme",
   "author": "Maarten Schroeven <maarten@sonaryr.be>",
   "license": "MIT",
   "scripts": {
