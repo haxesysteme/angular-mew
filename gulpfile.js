@@ -14,6 +14,7 @@ gulp.task('clean', function(){
 var banner = ['/*!',
     ' * <%= pkg.name %> v<%= pkg.version %> - <%= pkg.description %>',
     ' * Copyright Maarten Schroeven and other contributors',
+    ' * <%= pkg.homepage %>',
     ' * Released under the MIT license',
     ' */',
     ''].join('\n');

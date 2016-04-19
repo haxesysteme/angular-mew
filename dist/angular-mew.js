@@ -1,6 +1,7 @@
 /*!
  * angular-mew v0.1.0 - An angular wrapper for the Hawk HTTP authentication scheme
  * Copyright Maarten Schroeven and other contributors
+ * https://github.com/Sonaryr/angular-mew
  * Released under the MIT license
  */
 (function () {
