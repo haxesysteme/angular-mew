@@ -8,7 +8,7 @@ module.exports = function(config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'node_modules/hawk/lib/browser.js',
+      'node_modules/hawk/dist/browser.js',
       'dist/angular-mew.js',
       'src/*.spec.js'
     ],
