@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Sonaryr/angular-mew.svg?branch=master)](https://travis-ci.org/Sonaryr/angular-mew)
+[![npm version](https://badge.fury.io/js/angular-mew.svg)](https://badge.fury.io/js/angular-mew)
 ## About
 
 An angular wrapper for the Hawk HTTP authentication scheme.
