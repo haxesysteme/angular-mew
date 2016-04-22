@@ -1,5 +1,5 @@
 /*!
- * angular-mew v0.1.1 - An angular wrapper for the Hawk HTTP authentication scheme
+ * angular-mew v0.1.2 - An angular wrapper for the Hawk HTTP authentication scheme
  * Copyright Maarten Schroeven and other contributors
  * https://github.com/Sonaryr/angular-mew
  * Released under the MIT license
@@ -155,7 +155,7 @@
                     config: config
                 });
             }
-            
+
             if(typeof config.url === 'string' && !config.url.match(Hawk.utils.uriRegex)){
                 var prefix = $location.protocol()+'://';
                 prefix += $location.host();
@@ -185,6 +185,10 @@
                 addedHawkConfig = true;
             }
             var hawkSettings = HawkConfiguration.getSettings();
+
+            if(response.config.hawk.hasOwnProperty('checkServerAuthorization')){
+                hawkSettings.checkServerAuthorization = response.config.hawk.checkServerAuthorization;
+            }
 
             if (isDisabled(response.config) || !hawkSettings.checkServerAuthorization) {
                 if (addedHawkConfig){

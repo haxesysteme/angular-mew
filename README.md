@@ -52,7 +52,8 @@ $http({
             key: 'myKey',
             id: 'myId'
         },
-        algorithm: 'sha1'
+        algorithm: 'sha1',
+        checkServerAuthorization: true
     }
 });
 ```
@@ -64,10 +65,12 @@ There are tests written for every component of ther wrapper. You can run these v
 
 ## TODO
 * Add `bewit` support
-* Make more configurable
+* Add support for the `WWW-Authenticate` header
 * (FUTURE) Port to angular2
 
 ## Version
+### 0.1.2
+Make the server checking configurable via the config object
 ### 0.1.1
 Added a first README draft.
 ### 0.1.0

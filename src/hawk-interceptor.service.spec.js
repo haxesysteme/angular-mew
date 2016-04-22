@@ -314,6 +314,21 @@ describe("HawkInterceptor", function(){
             expect(interceptedResponse).toEqual(dummyResponse);
         });
 
+        it("should just return the response if the library is enabled, server checking is enabled, but disabled using the config", function () {
+            HawkConfiguration.setEnabled(true);
+            HawkConfiguration.setCheckServerAuthorization(true);
+            var dummyResponse = {
+                a: 'bb',
+                config: {
+                    hawk: {
+                        checkServerAuthorization: false
+                    }
+                }
+            };
+            var interceptedResponse = HawkInterceptor.response(cloneObject(dummyResponse));
+            expect(interceptedResponse).toEqual(dummyResponse);
+        });
+
         describe("server validation", function () {
             var defaultResponse = {
                 __testAttributes: {},
