@@ -156,17 +156,23 @@
                 });
             }
 
-            if(typeof config.url === 'string' && !config.url.match(Hawk.utils.uriRegex)){
-                var prefix = $location.protocol()+'://';
-                prefix += $location.host();
-                var port = $location.port();
-                if(port !== 80) {
-                    prefix += ':'+port;
+            var url = config.url;
+            if(typeof url === 'string') {
+                if (!url.match(Hawk.utils.uriRegex)){
+                    var prefix = $location.protocol()+'://';
+                    prefix += $location.host();
+                    var port = $location.port();
+                    if(port !== 80) {
+                        prefix += ':'+port;
+                    }
+                    url = prefix + url;
                 }
-                config.url = prefix + config.url;
+                var urlParams = config.paramSerializer(config.params);
+                if (urlParams.length)
+                    url = url + '?' + urlParams;
             }
 
-            var header = Hawk.client.header(config.url, config.method, hawkOptions);
+            var header = Hawk.client.header(url, config.method, hawkOptions);
             if (typeof header.err !== "undefined") {
                 return $q.reject({
                     reason: HawkErrors.HEADER_GENERATION + ": \"" + header.err + "\"",
